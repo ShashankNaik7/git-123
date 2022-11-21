@@ -1,0 +1,55 @@
+create table customer1(CustomerID int not null,CustomerName varchar(50)not null,Address varchar(50),City varchar(50),PostalCode int,Country varchar(50),primary key(customerr1));
+insert into customer1 values(1,'Alfreds Futterkiste','Obere Str. 57','Berlin',12209,'Germany');
+insert into customer1 values(2,'Ana Trujillo' ,'Avda','México D.F.',05021,'Mexico');
+insert into customer1 values(3,'Antonio Moreno','Taquer','México D.F.',05023,'Mexico');
+insert into customer1 values(4,'Around the Horn','Hanover Sq.','London',456356,'UK');
+insert into customer1 values(5,'Berglunds snabbköp','Avde','Luleå',456564,'Sweden');
+
+create table employee(empid int not null,name varchar(20) not null,mobile int,email varchar(40), primary key(empid)); 
+insert into employee values(1,'vishnu','944949494','vishnu@gmail.com');
+insert into employee values(2,'Shashank','954353636','sha@gmail.com');
+insert into employee values(3,'Ashutosh','987878789','ashu@gmail.com');
+insert into employee values(4,'Pratik','878878878','prati@gmail.com');
+insert into employee values(5,'Hari','946577574','har@gmail.com');
+
+create table supplier(supid int not null,supname varchar(20)not null,address varchar(20),city varchar(20),pincode int,country varchar(20),phone int,primary key(supid));
+insert into supplier values(1,'Exotic Liquid','9 Gilbert St.','Londona',34234,'UK',815552222);
+insert into supplier values(2,'New Orleans Cajun ','P.O. Box','New Orleans',	70117,'USA',1005554822);
+insert into supplier values(3,'Grandma Kelly', 'P.O. Box','New Orleans',70117,'USA',10055522);
+insert into supplier values(4,'Orleans','roBox','New Orleans',354657,'UAE',56055822);
+insert into supplier values(5,'NeCajun ','zoxBox','Newour',	786543,'Russia',98055542);
+
+create table shipper(ShipperID int not null,ShipperName varchar(50)not null,Phone int,primary key(ShipperID)); 
+insert into shipper values(1,'Speedy Express'	,555988);
+insert into shipper values(2,'super Express',555931);
+insert into shipper values(3,'fast Express',555983);
+insert into shipper values(4,'united Express',555961);
+insert into shipper values(5,'vrl Express',555983);
+
+creatre table category(CategoryID int,CategoryName varchar(50),Description varchar(50),primary key(CategoryID));
+insert into category values(1,'Beverages','Soft drinks, coffees, teas, beers, and ales');
+insert into category values(2,'Condiments','Sweet and savory sauces, relishes, spreads, and seasonings');
+insert into category values(3,'Confections','Desserts, candies, and sweet breads');
+insert into category values(4,'Dairy Products','Cheeses');
+insert into category values(5,'Grains/Cereals','Breads, crackers, pasta, and cereal');
+
+create table product(ProductID int,ProductName varchar(50),SupplierID int,CategoryID int ,Unit varchar(50),Price int,primary key(ProductID));
+insert into product values(1,'Chais',1,1,'10 boxes  20 bags',18);
+insert into product values(2,'Chang',1,1,'24 - 12 oz bottles',19);
+insert into product values(3,'Aniseed Syrup',1,2,'2 - 550 ml bottles',10);
+insert into product values(4,'Chef Anton',2,2,'48 - 6 oz jars',22);
+insert into product values(5,'Chef Anton',2,2,'36 boxes',21);
+
+create table orderinfo(OrderID int,CustomerID int,EmployeeID int,OrderDate date,ShipperID int,primary key(OrderID))
+insert into orderinfo values(10248,90,5,'1996-07-04',3)
+insert into orderinfo values(10249,81,6,'1996-07-05',1);
+insert into orderinfo values(10250,34,4,'1996-07-08',2);
+insert into orderinfo values(10251,84,3,'1996-07-08',1);
+insert into orderinfo values(10252,76,4,'1996-07-09',2);
+
+create table orderdetails(OrderDetailID int,OrderID int,ProductID int,Quantity int,primary key(OrderDetailID));
+insert into orderdetails values(1,10248,11,12);
+insert into orderdetails values(2,10248,42,10);
+insert into orderdetails values(3,10248,72,5);
+insert into orderdetails values(4,10249,14,9);
+insert into orderdetails values(5,10249,51,40);
